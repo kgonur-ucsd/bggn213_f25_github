@@ -1,0 +1,53 @@
+---
+title: "Class 17"
+author: "Kavi (PID: A69046927)"
+format: pdf
+editor: visual
+---
+## ENSEMBL/OMIM Calculations
+```{r}
+library(dplyr)
+read.csv("MXL_genotypes.csv") -> MXL_genotypes
+table(MXL_genotypes)
+sum(MXL_genotypes$Genotype..forward.strand.=="G|G") -> homoz_numb
+all_numb = count(MXL_genotypes)
+homoz_prop <- (homoz_numb/all_numb) * 100
+homoz_prop
+```
+## DESeq Analysis
+```{r}
+genereads <- read.table("genereads.txt", header=TRUE, row.names=1)
+
+summary(genereads)
+
+aa <- sum(genereads$geno == "A/A")
+ag <- sum(genereads$geno == "A/G")
+gg <- sum(genereads$geno == "G/G")
+```
+> Q13 Sample Size
+
+There are ```r aa``` individuals with A/A genotype, ```r ag``` individuals with A/G genotype, and ```r gg``` individuals with G/G genotype.
+
+Median expression provided in boxplot for Q14.
+
+> Q14 Box Plot
+
+```{r}
+library(ggplot2)
+ggplot(genereads) +
+  aes(x=geno,y=exp) +
+  theme_classic() +
+  geom_boxplot() +
+   stat_summary(
+    fun = median,
+    geom = "text",
+    aes(label = round(..y.., 2)),
+    vjust = -0.5,
+    color = "red"
+  ) +
+  labs(x="Genotype", y="Expression Level") +
+  geom_jitter(alpha=0.2, width = 0.2)
+```
+> Response to Q14
+
+From the boxplot, I can infer that the more copies there are of the SNP allele variant, the lower the expression of ORMDL3. The allele inhibits proper expression of ORMDL3.

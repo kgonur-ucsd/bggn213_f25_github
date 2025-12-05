@@ -1,0 +1,144 @@
+---
+title: "Find a Gene Project"
+author: "Kavi (PID: )"
+toc: true
+format: pdf
+---
+
+> 7. Convert the alignment to FASTA if needed and use R/Bio3D to calculate a sequence identity matrix.Generate a sequence identity heatmap in R and include it in the report.
+
+```{r, echo=TRUE}
+library(bio3d)
+
+aln <- read.fasta("find-a-gene.fa")
+idmat <- seqidentity(aln)
+
+# widen plot margins so labels aren't cut off
+par(mar = c(12, 12, 4, 4))  # bottom, left, top, right
+
+heatmap(idmat,
+        symm = TRUE,
+        Rowv = NA,
+        Colv = NA,
+        scale = "none"
+,
+        cexRow = 0.9,
+        cexCol = 0.9,
+        margins = c(12,12),
+        las = 2,         # rotate labels for readability
+        main = "Sequence Identity Heatmap")
+
+# restore defaults
+par(mar = c(5,4,4,2))
+```
+> 8. Use Bio3D or online BLAST to search the PDB for structural homologs of your sequence. Report the top 3 unique PDB hits with E-value, sequence identity, PDB ID, experimental method, resolution, and source organism.
+
+# Generating consensus sequence
+```{r}
+library(bio3d)
+cons_aln <- consensus(aln)
+```
+
+# Performing BLAST search against PDB
+```{r}
+aln_blast <- blast.pdb(cons_aln$seq)
+plot.blast(aln_blast,
+       top = 10,
+       main = "BLAST Search Results against PDB")
+```
+# Extracting top 3 unique PDB hits
+```{r}
+hits <- aln_blast$hit.tbl
+hits <- hits[order(hits$evalue), ]
+hits$pdb4 <- substr(hits$pdb.id, 1, 4)
+all_pdb4 <- unique(hits$pdb4)
+all_ann <- pdb.annotate(all_pdb4,
+                            anno.terms = c("structureId",
+                                            "experimentalTechnique",
+                                            "resolution",
+                                            "source"))
+all_ann_source <- all_ann[!duplicated(all_ann$source), ]
+hits_sub <- hits[hits$pdb4 %in% all_ann_source$structureId, ]
+all_ann_source_hits <- merge(all_ann_source, hits_sub,
+                             by.x = "structureId",
+                             by.y = "pdb4")
+all_ann_source_hits <- all_ann_source_hits[order(all_ann_source_hits$evalue), ]
+```
+
+# Annotating the top 3 structures
+```{r}
+top3 <- head(all_ann_source_hits, 3)
+top3
+```
+
+# Combined info
+
+```{r}
+result <- data.frame(
+  pdb.id     = top3$pdb.id,
+  evalue     = top3$evalue,
+  identity   = top3$identity,
+  method     = top3$experimentalTechnique,
+  resolution = top3$resolution,
+  source     = top3$source
+)
+
+result
+```
+# Write a CSV of the result
+```{r}
+write.csv(result, "top3_pdb_hits.csv", row.names = FALSE)
+```
+
+# Looking for conserved residues
+```{r}
+library(bio3d)
+cons <- conserv(aln$ali)
+plot(cons)
+which(cons > 0.8)
+```
+```{r}
+# aln$ali is alignment matrix
+query_index <- 3   # whichever column corresponds to your D. melanogaster Su(var)3-3
+query_seq <- aln$ali[, query_index]
+
+high <- which(cons >= 0.8)
+
+# keep only positions where your query sequence is NOT a gap
+high_query_positions <- high[ query_seq[high] != "-" ]
+
+high_query_positions[1:500]
+```
+```{r}
+alignment_positions <- high_query_positions
+
+# alignment column → residue number
+res_nums <- cumsum(query_seq != "-")[alignment_positions]
+
+res_nums[1:10]
+```
+```{r}
+aln$id
+sapply(1:length(aln$id), function(i) sum(aln$ali[,i] != "-"))
+apply(aln$ali[1:20, ], 2, paste0, collapse="")
+```
+
+# Last resort from ChatGPT
+```{r}
+library(bio3d)
+
+# 1. Read alignment
+aln <- read.fasta("find-a-gene.fa")
+
+# 2. Replace any NA with "-" globally
+aln$ali[is.na(aln$ali)] <- "-"
+
+# 3. Pick your D. psuedoobscura sequence column
+mel_idx <- grep("psuedoobscura", aln$id, ignore.case = TRUE)[1]
+query_seq <- aln$ali[, mel_idx]
+
+# sanity check
+table(query_seq)   # should show letters + "-" only
+
+```
+

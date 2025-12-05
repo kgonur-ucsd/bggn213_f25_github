@@ -1,0 +1,249 @@
+CLUSTAL O(1.2.4) multiple sequence alignment
+
+
+C.sculpturatus       -------------------------MSNVNNANDDRKRSSPPEPSETAGM----------	25
+D.yakuba             ------------------------------------------------------------	0
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            MKPTLATGGS-----SSAKVPEP--IDYVTLISDDSDGE--PSPKRTAPLPA----TTPG	47
+D.melanogaster       MKPT-QFGGS------SSKMTEP--IEYVTLISDDSDGE--PTPKRNVNHPP--SALSAP	47
+D.kikkawai           MKPT-QSGGT-----AGSKMSEP--IEYVTLISDDSDGE--PSPKRNATAPV--------	42
+D.setifemur          MKPT-QSGGS------GSKMSEP--IEYVTLISDDSDGE--PPPKRNATQ---TTGSTGS	46
+D.pandora            MKPT-QTGGS------GTKMSEP--IEYVTLISDDSDGE--PSPKRNAPPPGPTSTAASS	49
+D.busckii            MKPT--PSGA-------GKTGEQESIEYVTLISDE-------------------------	26
+D.grimshawi          MKPT-QPGGSSNSATSAGKTGEP--IEYVTLISDDSDGE--PSPKRNT---S-----GGG	47
+D.rubida             ------VAGS-NANNAGGKVGEP--IEYVTLISDDSDGE--PSPKRSNVSAS-----TVG	44
+                                                                                 
+
+C.sculpturatus       TAAEQEK-QSVGSSGDEQ---------TRRSSRRKRPKVEYK---------------ESE	60
+D.yakuba             ------------------------------------------------------------	0
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            TNSQKLK-IHDDDSNDAP-ATSASANDERRTSRRNKPKVDYTTNKPSTSG--EAAG-SER	102
+D.melanogaster       NPGQKQK-HPDEDSNDAP-ATS----DERRTSRRNRPKVDYS-NRPSGSG--DTAS---N	95
+D.kikkawai           ATSQKQK-LPDDDSNDAP-ATSA-AADERRTSRRNRPKVDYS-NRPSGSG--EAAPTGEK	96
+D.setifemur          SSSQKQKSVADEDSNDAP-ANSSTGADERRTSRRNRPKVDYS-NRPSGVA--ENAGGAEK	102
+D.pandora            TTGQKQKPVPDDDSNDAP-AGSTTAGDERRTSRRNKPKVDYS-NRQGGSV--ENAN-TEK	104
+D.busckii            -----------DDSNDVP-ATS----DERRTSRRNKPKVDYT-NKTVTTSNVESVGYE-K	68
+D.grimshawi          GHAKA-K--FDDDSNDTP-ATS----DERRTSRRNKPKVDYT-NKPNAT--VENVSFE-K	95
+D.rubida             AQSKAAK--FDDDSNDTPTAAS----DERRTSRRNKPKVDYT-NTNKATA-VDNAASE-K	95
+                                                                                 
+
+C.sculpturatus       G---KVAAVSEEEY---------VSDEEKAKQ-----EIKPPP---VPPPKAEEMV----	96
+D.yakuba             ------------------------------------------------------------	0
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            GSAGPTRSTS-NPPG---EKRVQAQVQSEPRSRKSDTAAAGSSAGG--SSANTGTRSAPS	156
+D.melanogaster       DKSGSASMGPNNQQA----ER---RSQSQTRK--SEANATSSS--VSGPSAGN---SRPS	141
+D.kikkawai           STPGSSSSSNNNQQG----DRSRSQNQAQGRR--SEANASS----VSGQATGN---ARPT	143
+D.setifemur          TGSGSVSGKD---QP----ER-RSQNQTQARR--SEANATS----VSGQTANN---SRPS	145
+D.pandora            SNTATVSGKD---QV----DR-RSQNQTQARK--SEAISTS----VSGQAAAN---PRPS	147
+D.busckii            SSSVSSGSSSG--QV---DKRTQTQSEQRQRK--SESV--------SGSSRG--ATQKDT	111
+D.grimshawi          SSSGSSGSSTG--IL---DKRGHVHTEQRSRK--SETGLHHTA---TTSARN--ALPKDT	143
+D.rubida             SNSGSSGSSAG--LT---EKRHQVAGEHRSRK--SENAGHANAAGNSANTRS--SVQRDA	146
+                                    ***                                          
+
+C.sculpturatus       IEEVDSEHDDP----------------TGLEGAAFQSRLPFDKMTAQEAACFPDISQGPP	140
+D.yakuba             ------------------------------------------------------------	0
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            TNGE-TRN----------RDMGTPTVLTGEEGAVFQSRLPFGKMTPNEEACFPDISRSGI	205
+D.melanogaster       QNGD-SKD----------RDAGTPTVLSGQEGAVFQSRLPFNKMTPNEEACFPDISRSGI	190
+D.kikkawai           QNGD-ARE----------RDVGTPTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	192
+D.setifemur          QNGE-GRE----------RDMGTPTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	194
+D.pandora            QNGD-SKE----------RDVGTPTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	196
+D.busckii            TNGV-N---------GKTRDTSTSTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	161
+D.grimshawi          SNGT-N---------GEIRDTSTPTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	193
+D.rubida             ANGG-G--SGGSGNIGDSRDAGTPTVLSGQEGAVFQSRLPFSKMTPNEEACFPDISRSGI	203
+                                                                                 
+
+C.sculpturatus       QTQKVFLHIRNRLLQLWLENPKQQLIFENVLPQIEPPYNSDGPLVMRIHAYLERHGYINF	200
+D.yakuba             ------------------------------------------------------------	0
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            LGHRVFLNIRNSLLHMWVDNPKLQLSFESALKALPPPFDSEPNLVRRIHSFLERHGFINF	265
+D.melanogaster       LGHRVFLNIRNSLLHMWVDNPKIQLSFEIALKNLPPPFDSEPSL----------------	234
+D.kikkawai           LGHRVFLNIRNSLLHMWVDNPKVQLSFENALKSLPPPFDSEPGLVRRVHSFLERHGFINF	252
+D.setifemur          LGHRVFLNIRNSLLHMWVDNPKVQLTFENALKSLPPPFDSEPCLVRRLHSFLERHGFINF	254
+D.pandora            LGHRVFLNIRNSLLHMWVDNPKVQLSYENAMKALPPPFDSEPSLVRRVHSFLERHGFINF	256
+D.busckii            LGHRVFLNIRNSLLHMWVDNPKLQLTFENALKDLPPPFDSEPNLVKRVHSFLERHGFINF	221
+D.grimshawi          LGHRVFLNIRNSILHMWVDNPKVQLTFDNVLKRLPPPFDSDPNLVRRVHSFLERHGFINF	253
+D.rubida             LGHRVFLNIRNSLLHMWVDNPKVQLTFDNALKCLPRPFDSEPTLVRRVHSFLERHGFINF	263
+                                                                                 
+
+C.sculpturatus       GVFKRLKPIPTKKHGKVIIIGAGISGLAAAQQLQQFGMEVVVLEARDRVGGRVATFRKGN	260
+D.yakuba             ----------------------------------------------------IATFRKNS	8
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            GIFKRLVPIPTKKLGKVIVIGAGISGLAVAQQLQQFGMDVIVLEARDRIGGRIATFRKNS	325
+D.melanogaster       ----RLKPIPAKKLGKVIVIGAGISGLAVAHQLQQFGMDVIVLEARDRVGGRISTFRKNS	290
+D.kikkawai           GIFKRQRPIPTKKLGKVIVIGAGISGLAVAQQLQQFGMDVIVLEARDRVGGRIATFRKNS	312
+D.setifemur          GIFKRVRPIPTKKLGKVIVIGAGISGLAVAQQLQQFGMDVIVLEARDRVGGRIATFRKNS	314
+D.pandora            GIFKRQRPIPTKKLGKVIVIGAGISGLAVAQQLQQFGMDVIVLEARDRVGGRIATFRKNS	316
+D.busckii            GIFKRLRPIPTKKLGKVIVIGAGISGLAVGQQLQQFGMDVIMLEARDRVGGRIATFRKNS	281
+D.grimshawi          GIFKRLSPIPVKKLGKVIVIGAGISGLAVGQQLQQFGMDVIVLEARDRVGGRIATFRKNS	313
+D.rubida             GIFKRQVPITSKKLGKVIVIGAGISGLAVGQQLQQFGMDVIVLEARDRVGGRIATFRKNS	323
+                                                                                 
+
+C.sculpturatus       FIADLGAMVVTGLGGNPITVLSKQINMELHKIRQKCPLYESNGNT---------------	305
+D.yakuba             YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	54
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIHQTCPLYGPDGKPV--------------	371
+D.melanogaster       YIADVGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	336
+D.kikkawai           YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	358
+D.setifemur          YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	360
+D.pandora            YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	362
+D.busckii            YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	327
+D.grimshawi          YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	359
+D.rubida             YIADLGAMVVTGVYGNPMTILSKQIGMDLVPIQQTCPLYGPDGKPV--------------	369
+                                                                   **************
+
+C.sculpturatus       ---NSSFISY----------------TKESCRHKQKCEIHGKKCTRIQ------------	334
+D.yakuba             ------------------------------------------------------------	54
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            ------------------------------------------------------------	371
+D.melanogaster       ------------------------------------------------------------	336
+D.kikkawai           ------------------------------------------------------------	358
+D.setifemur          ------------------------------------------------------------	360
+D.pandora            ------------------------------------------------------------	362
+D.busckii            ------------------------------------------------------------	327
+D.grimshawi          ------------------------------------------------------------	359
+D.rubida             ------------------------------------------------------------	369
+                     ***       ****************                      ************
+
+C.sculpturatus       ------IAPDVPYVPKDKDEMV-EREFNRLLEATSYLSHQLDFNYVQGKPVSLGQALEWV	387
+D.yakuba             --------------PKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNCPVSLGDALEWI	99
+D.pseudoobscura      ------------------------------------------------------------	0
+D.obscura            --------------PKEK-DDVIELEFNRLLESASYLSHRLDFNYAGNCPVSLGDALEWV	416
+D.melanogaster       --------------PKEK-DDVIEREFNRLLESASYLSHRLDFNYAGDCPVSLGDALEWI	381
+D.kikkawai           --------------PKEK-DDVIELEFNRLLESASYLSHRLDFNYAGNCPVSLGDALEWI	403
+D.setifemur          --------------PKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNCPVSLGDALEWI	405
+D.pandora            --------------AKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNCPVSLGDALEWI	407
+D.busckii            --------------SKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNNPVSLGDALEWI	372
+D.grimshawi          --------------PKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNNPVSLGDALEWI	404
+D.rubida             --------------PKEK-DDVIEREFNRLLESASYLSHRLDFNYAGNNPVSLGDALEWI	414
+                     ******                                                      
+
+C.sculpturatus       IKLQEKHVKEKQIQHWKAILELQEKLKTNQNK----------------------------	419
+D.yakuba             ISMQEMQVMHKRAQHMQEIIAIQTKIIEHRRQLKTVKETIATLKNEHLTMIKQRKPKGAD	159
+D.pseudoobscura      --------------------AAQKKIIEHRKPFKAVKQTIDALRTEHISMVKKRCPKGVE	40
+D.obscura            ISMQEMQAMNKRAQHMQDIIAAQKKIIEHQKRLKAVKQTIDALRTEHISMVTKRCPKGVE	476
+D.melanogaster       ISMQEMQVMHKRGQHMQEIIATQTKIIEQRRRLKTLRDTIGKLKNEHLAMINQRKPKGTD	441
+D.kikkawai           ISMQEMQVMHKRALHMQEIIAAQTKIIEHRQRIKSVKQTIDTLRSEHAALVKQRTPKGVE	463
+D.setifemur          ISMQEMQVMNKRAVHMQEIIAAQTKIIEHRRRLKSVKESIATLKSDHQEMLKQRTPKGVD	465
+D.pandora            ISMQEMQVMNKRAVHMQEIIAAQTKIIEHRQRLKSVKQNIANLKTEHQALLKQPKPKGTA	467
+D.busckii            ISMQDKAVQEKRAAHMQEILTVQAEIIDHRKRLKSVLLNIQTLRTSHQELMQKRLAKGVQ	432
+D.grimshawi          INMQDKAVQEKRAAHMHEIIAAQMKIIEHRKQLKIILQKIASLKTELQALVKQRQPKSAQ	464
+D.rubida             INMQEKAVQEKRASHMHEIIAAQNKIIEHRKRLKVIIQSIAKLKADYQALLKKRLPKSSH	474
+                                           * ::  ::.                             
+
+C.sculpturatus       --------EW--------------------------------------------------	421
+D.yakuba             NDQNYGRQEFNIRNTQ-------------IKMEDTVRMFHEAH-----------------	189
+D.pseudoobscura      SDTSYARQEYNIRHTQV-------------KLEDTVKQFKELH-----------------	70
+D.obscura            SDASYARQEYNIRHTQ-------------VKLDDTVKQFTELH-----------------	506
+D.melanogaster       GDLKYCYQEFNIRNTQ-------------IKMEETISTFHDLH-----------------	471
+D.kikkawai           SDLTYARQEFSIRNTQ-------------FKLDEAVKLFGELR-----------------	493
+D.setifemur          SDVTYARQEFNIRNTQ-------------IKLEDTVKLFRELY-----------------	495
+D.pandora            NAATYARQEFNKRNTQ-------------IKLEDTMKLYGELH-----------------	497
+D.busckii            SDSAYGLQEYNIRVTQ-------------IKLDDELKLEEELR-----------------	462
+D.grimshawi          NENTYACQEYTIRTTQ-------------IKLEDTISVEDEMR-----------------	494
+D.rubida             NDSSFAQQEYNIRINQ-------------IKLEDTQKIEDELR-----------------	504
+                             *:       ************              *****************
+
+C.sculpturatus       ---DQYLEQQKEIEEKLQELEASPPSDVYLSSRDRQVLDWHFANLEFANATPLNNLSLKH	478
+D.yakuba             -------AAEKQMEAKLQELEQNRPSDVYLSSRDRLILDWHFANLEFANATRLNNLSLKH	242
+D.pseudoobscura      -------DENKRMVSKLHELEQNKPSDVYLNTRDRLILDWHFANLEFANATRLNNLSLKH	123
+D.obscura            -------EENKQMVAKLHELEQNKPSDVYLNTRDRLILDWHFANLEFANATRLNNLSLKH	559
+D.melanogaster       -------AEEKQMLAKLHELEQNRPSDVYLSSRDRLILDWHFANLEFANATRLNNLSLKH	524
+D.kikkawai           -------DEDKQMETKLHEMEQNRPSDVYLSSRDRLILDWHFANLEFANATRLNNLSLKH	546
+D.setifemur          -------EEDKRMEGKLRELEENRPSDVYLSSRDRLILDWHFANLEFANATRLNNLSLKH	548
+D.pandora            -------EEDKRLEAKLRELEQNRPSDVYLSSRDRLLLDWHFANLEFANATRLNNLSLKH	550
+D.busckii            -------SQSQILDTKLHQLEQNGHSQVYLSSRDRLILDWHFANLEFANATHLNNLSLKH	515
+D.grimshawi          -------TQGHKLEIQLQELEQNGPSQVYLSSRDRLILDWHFANLEFANATRLNNLSLKH	547
+D.rubida             -------AQGHKLELQLQEIEQNEPSQVYLSSRDRLILDWHFANLEFANATRLDNLSLKH	557
+                     ***       : :  :*:::* .  *:***.:*** :************** *:******
+
+C.sculpturatus       WDQDDDFEFTGSHLTVRNGYSCVPVALAEGLDIKLNTTVKQIRYGSHGVEVLAYNTRANT	538
+D.yakuba             WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGSKGVEVVAENMKTSN	302
+D.pseudoobscura      WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGPNGIEIVAENMKTSN	183
+D.obscura            WDQDDDFEFIGHHTTVRNGYSCVPVALSENLDIRVNSAVKEIKYGPNGIEIVAENMKTSN	619
+D.melanogaster       WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGTKGVEVVAENLKTSN	584
+D.kikkawai           WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGTHGVEVVAENLKTSN	606
+D.setifemur          WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGTTGVEVVAENLKTSN	608
+D.pandora            WDQDDDFEFIGHHTTVRNGYSCVPVALTENLDIRVNSAVKEIKYGTNGVEVVAENLKTSN	610
+D.busckii            WDQDDDFEFIGHHTTVRNGYSFVPVALTENLDIRLNSAVKEIKYSSKGVEIVAENLKTSN	575
+D.grimshawi          WDQDDDFEFIGHHTTVRNGYSCVPVALTENIDIRLNSAVKEIKYTTKGVEIVAENLKTSN	607
+D.rubida             WDQDDDFEFIGHHTTVRNGYSCVPVALTENIDIRLNSAVKEIKYSNKGVEIVAENLKTCN	617
+                     ********* * * ******* *****:*.:**::*::**:*:*   *:*::* * :: .
+
+C.sculpturatus       GMGSYKGDAVMSTLPLGVLKQAVQGSQN--VPNTVQFVPPLPDWKVSAIQRLGFGNLNKV	596
+D.yakuba             SQMTYKADLAVCTLTLGVLKVAVAHEES-QQSNTVKFDPPLPDWKQQAIKRLGFGNLNKV	361
+D.pseudoobscura      SVMTYKADLAVCTLTLGVLKVAVAEEES-QQKNTVKFDPPLPDWKRQAIRRLGFGNLNKV	242
+D.obscura            SVMTYKADLAVCTLTLGVLKVAVAEEES-QQKNTVKFEPPLPDWKRQAIRRLGFGNLNKV	678
+D.melanogaster       SQMTYKADLVVCTLTLGVLKVAVAHKES-QQSNTVKFDPPLPDWKQQAIKRLGFGNLNKV	643
+D.kikkawai           SQMTYKADLAVCTLTLGVLKVAVAHEES-QQSNTVKFDPPLPDWKQQAIRRLGFGNLNKV	665
+D.setifemur          SQMTYKADLVVCTLTLGVLKVAVAQEES-QQNNTVKFDPPLPDWKQQAIRRLGFGNLNKV	667
+D.pandora            SLMSYKADLVVCTLTLGVLKLAVAHEES-QQSNTVKFDPPLPDWKQQAIRRLGFGNLNKV	669
+D.busckii            SQMTYKADLAVCTLTLGVLKVAVAHEES-EHANTVKFTPPLPDWKQQAIRRLGFGNLNKV	634
+D.grimshawi          SQMTYKADLAVCTLTLGVLKVAVAQDES-QHANTVKFDPPLPDWKQQAIRRLGFGNLNKV	666
+D.rubida             SQVTYKADLAVCTLTLGVLKVAITNEESQQHANTVKFDPPLPDWKQQAIRRLGFGNLNKV	677
+                     .  :**.* .:.** ***** *:  .:.    ***:* ******* .**:**********
+
+C.sculpturatus       VLCFDRVFWDPNANLFGHVGSTTASRGELFLFWNLYRAPVLLALVAGEAAAIMENVSDDV	656
+D.yakuba             VLCFDRIFWDPNANLFGHVGSTTSSRGEMFLFWSISSSPVLLALVAGMAANLVESVTDDI	421
+D.pseudoobscura      VLCFDRIFWDPNANLFGHGGSTTASRGEMF------------------------------	272
+D.obscura            VLCFDRIFWDPNANLFGHVGSTTASRGEMFLFWSISSSPVLLALVAGMAANIVESVTDDV	738
+D.melanogaster       VLCFDRIFWDPNANLFGHVGSTTASRGEMFLFWSISSSPVLLALVAGMAANLVESVTDDI	703
+D.kikkawai           VLCFDRIFWDPNANLFGHVGSTTSSRGEMFLFWSISSSPVLLALVAGMAANLVESVTDDI	725
+D.setifemur          VLCFDRIFWDPNANLFGHVGSTTSSRGEMFLFWSISSSPVLLALVAGMAANIVESVTDDI	727
+D.pandora            VLCFDRIFWDPNANLFGHVGSTTSSRGEMFLFWSISSSPVLLALVAGMSANIVESVTDDI	729
+D.busckii            VLCFDRIFWDPNANLFGHVGSTTASRGEMFLFWSISSSPVLLALVAGMAANLVETVTDDI	694
+D.grimshawi          VLCFDRIFWDPNANLFGHVGSTTASRGEMFLFWSISSSPVLLALVAGMAANIVESVTDDI	726
+D.rubida             VLCFDRIFWDPNANLFGHVGSTTASRGEMFLFWSISSTPVLLALVAGNAANIVESVTDDI	737
+                     ******:*********** ****:****:*                              
+
+C.sculpturatus       IVGRCLAVLKGIFGNSAVPQPKETVVTRWRADPWSRGSYSYVATGSSGNDYDILATPVTP	716
+D.yakuba             IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDPWARGSYSYVSVGSSGSDYDLLAAPVIP	481
+D.pseudoobscura      ------------------------------------------------------------	272
+D.obscura            IIGRCMSVLKNIFGNTAVPQPKETLVTRWRSDQWARGSYSYVSVGSSGSDYDLLAAPVIP	798
+D.melanogaster       IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDPWARGSYSYVSVGSSGSDYDLLAAPVIP	763
+D.kikkawai           IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDPWARGSYSYVSVGSSGSDYDLLAAPVIP	785
+D.setifemur          IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDPWARGSYSYVSVGSSGSDYDLLAAPVIP	787
+D.pandora            IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDPWARGSYSYVSVGSSGSDYDLLAAPVIP	789
+D.busckii            IVGRCISVLKNIFGNTSVPQPKETVVTRWRSDQWARGSYSYVSVGSSGSDYDLLAAPVIP	754
+D.grimshawi          IIGRCMSVLKNIFGNTSVPQPKETVVTRWRSDQWARGSYSYVSVGSSGSDYDLLAAPVIP	786
+D.rubida             IVGRCMSVLKNIYGNTSVPQPKETVVTRWRSDQWARGSYSYVSVGSSGSDYDLLAAPVIP	797
+                                                                                 
+
+C.sculpturatus       PSVI-PGTGQTAI-------LPRLFFSGEHTIRNYPATVHGALLSGLREAGRIADQFLGC	768
+D.yakuba             P------SSKDG------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	529
+D.pseudoobscura      ------------------------------------------------------------	272
+D.obscura            PPVSGQRSSKDS------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	852
+D.melanogaster       P------SSKDA------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	811
+D.kikkawai           P------SSKEA------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	833
+D.setifemur          P------TCKEP------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	835
+D.pandora            P------TCKEP------EGLPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	837
+D.busckii            P------SNFEPHYSKEVDELPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	808
+D.grimshawi          P------SSFEPHFSKEGEELPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	840
+D.rubida             P------KSQEPHSSKEPEELPRLFFAGEHTIRNYPATVHGAYLSGLREAGRIADYYLGY	851
+                                                                                 
+
+C.sculpturatus       PYALPRQPATTQPV----------------------------------------------	782
+D.yakuba             PEGTPPDIGYSVAEAANLVSVGHVVKLRDLSPIYL-------------------------	564
+D.pseudoobscura      ------------------------------------------------------------	272
+D.obscura            PEGTPPNIGYSVAEAANAVCVGNVVKLRDFSPNLSD-SPTSKKSEENSNSNTAEPEPTEV	911
+D.melanogaster       PEGTPPDIGYSVAEAANLVSVGNVVKLRDLSPNLSDSSPSSKKSEENSNSNTADS--TEL	869
+D.kikkawai           PEGTPPDIGYSVAEAANLVNVGNVVKLRDLSPNLSD-SPSSKKSEENSNSNTADS--AEL	890
+D.setifemur          PEGTPPDIGYSVAEAANAVSVGNVVKLRDLSPNLSD-SPSSKKSEDNSNSNTADS--AEL	892
+D.pandora            PEGTPPDIGYSVAEAANSVSVGNVVKLRDLSPNLSD-SPSSKKSEENSSSNTADS--AEL	894
+D.busckii            PEGTPPDIGYSVSEAANSVSVGNVVKLRDLSPHLAD-SPLSKK-EENSS--TANA--SDL	862
+D.grimshawi          PEGTPPDIGYSVSEAANSVSVGNVVKLRDLSPRLTD-SPLPKKLEENSN--IAES--TDL	895
+D.rubida             PEGTPPDIGYSVSEAANSVSVGNVVKLRDLSPRLSD-SP--KKSEDNSS--NVDS--TDV	904
+                                                                                 
+
+C.sculpturatus       -	782
+D.yakuba             -	564
+D.pseudoobscura      -	272
+D.obscura            P	912
+D.melanogaster       Q	870
+D.kikkawai           Q	891
+D.setifemur          Q	893
+D.pandora            Q	895
+D.busckii            N	863
+D.grimshawi          Q	896
+D.rubida             Q	905
+                      

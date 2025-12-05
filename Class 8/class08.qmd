@@ -1,0 +1,196 @@
+---
+title: "Class 8: Breast Cancer Analysis Project"
+author: "Kavi Gonur (PID: A69046927)"
+format: pdf
+toc: true
+---
+
+## Background
+
+The goal of today's mini-project is for you to explore a complete analysis using the unsupervised learning techniques covered in class. You’ll extend what you’ve learned by combining PCA as a preprocessing step to clustering using data that consist of measurements of cell nuclei of human breast masses. This expands on our RNA-Seq analysis from last day.
+
+The data itself comes from the Wisconsin Breast Cancer Diagnostic Data Set first reported by K. P. Benne and O. L. Mangasarian: “Robust Linear Programming Discrimination of Two Linearly Inseparable Sets”.
+
+Values in this data set describe characteristics of the cell nuclei present in digitized images of a fine needle aspiration (FNA) of a breast mass.
+
+
+## Data Report
+```{r}
+fna.data <- read.csv("WisconsinCancer.csv")
+wisc.df <-data.frame(fna.data, row.names=1)
+```
+
+Note that the first column here wisc.df$diagnosis is a pathologist provided expert diagnosis. We will not be using this for our unsupervised analysis as it is essentially the “answer” to the question which cell samples are malignant or benign.
+
+To make sure we don’t accidentally include this in our analysis, lets create a new data.frame that omits this first column
+```{r}
+# We can use -1 here to remove the first column
+wisc.data <- wisc.df[,-1]
+```
+Finally, setup a separate new vector called diagnosis that contains the data from the diagnosis column of the original dataset. We will store this as a factor (useful for plotting) and use this later to check our results.
+```{r}
+# Create diagnosis vector for later 
+diagnosis <- factor(wisc.df$diagnosis)
+```
+
+> Q1. How many observations are in this dataset?
+
+There are `r nrow(wisc.data)` observations in this dataset.
+
+> Q2. How many of the observations have a malignant diagnosis?
+
+There are `r sum(wisc.df$diagnosis=="M")` malignant diagnoses.
+
+> Q3. How many variables/features in the data are suffixed with _mean?
+
+There are `r length(grep("_mean",colnames(wisc.data)))` variables/features suffixed with `_mean`.
+
+
+## Performing PCA
+The main function in base R for PCA is called `prcomp()`. An optional argument `scale` should nearly always be set to `scale=TRUE` for this function.
+```{r}
+wisc.pr <- prcomp(wisc.data,scale=T,center=T)
+summary(wisc.pr)
+```
+
+The next step in your analysis is to perform principal component analysis (PCA) on `wisc.data`.
+
+```{r}
+# Check column means and standard deviations
+colMeans(wisc.data)
+
+apply(wisc.data,2,sd)
+
+# Perform PCA on wisc.data by completing the following code
+wisc.pr <- prcomp(wisc.data, scale=T)
+summary(wisc.pr)
+```
+
+## Interpreting PCA Results
+Let's make our main resukt figure - the "PC plot" or "score plot", "ordination plot", etc.
+
+```{r}
+library(ggplot2)
+ggplot(wisc.pr$x) +
+  aes(PC1,PC2, col=diagnosis) +
+  geom_point() +
+  theme_classic()
+```
+
+> Q4. From your results, what proportion of the original variance is captured by the first principal components (PC1)?
+
+0.4427
+
+> Q5. How many principal components (PCs) are required to describe at least 70% of the original variance in the data?
+
+3
+
+> Q6. How many principal components (PCs) are required to describe at least 90% of the original variance in the data?
+
+7
+
+> Q7. What stands out to you about this plot? Is it easy or difficult to understand? Why?
+
+The plot isn't that hard to understand, but could be labeled better.
+
+> Q8. Generate a similar plot for principal components 1 and 3. What do you notice about these plots?
+
+```{r}
+ggplot(wisc.pr$x) +
+  aes(PC1,PC3,col=diagnosis) +
+  geom_point() +
+  theme_classic()
+```
+
+## Variance Explained
+```{r}
+# Calculate variance of each component
+pr.var <- wisc.pr$sdev^2
+head(pr.var)
+```
+
+```{r}
+# Variance explained by each principal component: pve
+pve <- pr.var/sum(pr.var)
+
+# Plot variance explained for each principal component
+pve_df <- data.frame(PC = seq_along(pve),  # 1, 2, 3, ..., length(pve)
+  pve = pve
+)
+ggplot(pve_df) +
+  aes(x=PC,y=pve) +
+  labs(x="Principal Component",y="Propotion of Variance Explained") +
+  scale_y_continuous(limits=c(0,1)) +
+  geom_point() +
+  geom_line() +
+  theme_classic()
+```
+factoextra package
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("factoextra")
+## ggplot based graph
+install.packages("factoextra")
+library(factoextra)
+fviz_eig(wisc.pr, addlabels = TRUE)
+```
+
+## Hierarchical Clustering
+```{r}
+d <- dist(scale(wisc.data))
+h <- hclust(d)
+plot(h)
+```
+> Q10. Using the plot() and abline() functions, what is the height at which the clustering model has 4 clusters?
+
+Height = 19
+
+```{r}
+plot(h)
+abline(h = 19, col="red", lty=2)
+```
+
+# Combining PCA and clustering
+```{r}
+d <- dist(wisc.pr$x[,1:3])
+wisc.pr.hclust <- hclust(d,method="ward.D2")
+plot(wisc.pr.hclust)
+abline(h=70,col="red")
+```
+Get my cluster membership vector
+```{r}
+grps <- cutree(wisc.pr.hclust,h=70)
+table(grps)
+```
+```{r}
+table(diagnosis)
+```
+ Make a wee "cross-table"
+```{r}
+table(grps,diagnosis)
+```
+TP: 179
+FP: 24
+
+Sensitivity: TP/(TF+FN)'
+
+```{r}
+plot(wisc.pr$x[,1:2], col=grps)
+plot(wisc.pr$x[,1:2], col=diagnosis)
+```
+```{r}
+g <- as.factor(grps)
+levels(g)
+g <- relevel(g,2)
+levels(g)
+```
+```{r}
+# Plot using our re-ordered factor 
+plot(wisc.pr$x[,1:2], col=g)
+```
+```{r}
+library(rgl)
+plot3d(wisc.pr$x[,1:3], xlab="PC 1", ylab="PC 2", zlab="PC 3", cex=1.5, size=1, type="s", col=grps)
+rgl.snapshot("pca-3d.png")
+```
+![3D PCA plot](pca-3d.png)

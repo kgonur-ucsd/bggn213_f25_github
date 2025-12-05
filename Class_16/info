@@ -1,0 +1,3 @@
+Copy results back
+
+scp -r -i "~/Downloads/kavikey-bggn213.pem" ubuntu@ec2-35-91-230-52.us-west-2.compute.amazonaws.com:~/*_quant .

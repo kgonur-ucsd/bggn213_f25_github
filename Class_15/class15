@@ -1,0 +1,30 @@
+This is the nano text editor - as simple as it comes
+
+git: version control
+pwd: print working directory (where the hell am I)
+cd: change directory
+ls = listing files and directories
+mkdir: making a new directory (create a folder)
+nano: text editor
+cp: copy a file (cp source result)
+mv: move file or folder (my source results)
+less: to see the contexts of a text file
+
+Relative path: where stuff relative to you are currrentlh (i.d. set woeking director)
+
+Instance ID
+
+i-0c58d31788f85fe98 (bggn213_kavi)
+Open an SSH client.
+
+Locate your private key file. The key used to launch this instance is kavikey-bggn213.pem
+
+Run this command, if necessary, to ensure your key is not publicly viewable.
+chmod 400 "kavikey-bggn213.pem"
+
+Connect to your instance using its Public DNS:
+ec2-54-186-202-240.us-west-2.compute.amazonaws.com
+
+Example:
+
+ssh -i "kavikey-bggn213.pem" ubuntu@ec2-54-186-202-240.us-west-2.compute.amazonaws.com

@@ -1,0 +1,237 @@
+---
+title: "Class 9"
+author: "Kavi (PID: A69046927)"
+toc: true
+format: pdf
+---
+
+```{r}
+stats <- read.csv("PDB_Data_Dis.csv")
+as.numeric(sub(",","", stats$X.ray))
+as.numeric(sub(",","", stats$Total))
+```
+
+This is annoying. Let's see if we can make it easier with a different package.
+
+```{r}
+library(readr)
+stats <- read_csv("PDB_Data_Dis.csv")
+stats
+```
+
+> Q1: What percentage of structures in the PDB are solved by X-Ray and Electron Microscopy.
+
+```{r} 
+n.total <- sum(stats$Total)
+n.xray <- sum(stats$`X-ray`)
+n.em <- sum(stats$EM)
+
+round(n.xray/n.total * 100,2)
+round(n.em/n.total * 100,2)
+```
+```{r}
+library(ggplot2)
+ggplot(stats, aes(reorder(`Molecular Type`,-Total),Total)) +
+  geom_col() +
+  theme_classic()
+```
+
+
+> Q2: What proportion of structures in the PDB are protein?
+
+```{r}
+stats$`Molecular Type` <- trimws(stats$`Molecular Type`)
+n.total <- sum(stats$Total)
+n.protein <- sum(stats$Total[grepl("Protein", stats$`Molecular Type`, ignore.case = TRUE)])
+prot.por <- round(n.protein / n.total * 100, 2)
+```
+`r prot.por`% of structures in the PDB are protein.
+
+> Q3: Type HIV in the PDB website search box on the home page and determine how many HIV-1 protease structures are in the current PDB?
+
+363 structures
+
+## Visualizing Structure Data
+
+The Mol* viewer is embedded in many bioinformatics websites. The homepage is https://molstar.org
+
+I can insert any figure or image file unsing markdown format
+
+![The HIV-Pr dimer with bound inhibitor](1HSG.png)
+![The HIV-Pr dimer with bound inhibitor, water molecule, and active regions in spacefill](1HSG-SF.png)
+![Another view](1HSG-FULL.png)
+## Bio3D package for structural bioinformatics
+
+We can use the bio3d package to read and analyze biomoecular data in R:
+
+```{r}
+library(bio3d)
+
+hiv <- read.pdb("1hsg")
+hiv
+```
+```{r}
+head(hiv$atom)
+```
+
+Let's get the sequence
+
+```{r}
+pdbseq(hiv)
+```
+
+Let's trim to chain A and get just its sequence:
+
+```{r}
+chainA <- trim.pdb(hiv,chain="A")
+chainA.seq <- pdbseq(chainA)
+```
+
+Let's blast
+
+
+```{r blast_hiv,cache="false"}
+blast <- blast.pdb(chainA.seq)
+```
+
+```{r}
+head(blast$hit.tbl)
+```
+
+Plot a quick overview of blast results
+```{r}
+
+hits <- plot(blast)
+```
+
+```{r}
+hits$pdb.id
+files <- get.pdb(hits$pdb.id[1:100], path = "pdbs", split = TRUE, gzip = TRUE)
+```
+
+### Align and superpose structures
+Next we will use the pdbaln() function to align and also optionally fit (i.e. superpose) the identified PDB structures.
+```{r, fig.width=8, fig.height=6}
+pdbs <- pdbaln(files, fit = TRUE, exefile="msa")
+```
+```{r}
+ids <- basename.pdb(pdbs$id)
+plot(pdbs, labels=ids)
+```
+
+The function `pdb.annotate()` provides a convenient way of annotating the PDB files we have collected. Below we use the function to annotate each structure to its source species. This will come in handy when annotating plots later on:
+```{r}
+anno <- pdb.annotate(ids)
+unique(anno$source)
+anno
+```
+
+### Principal component analysis
+```{r}
+pc.xray <- pca(pdbs)
+plot(pc.xray)
+
+# Calculate RMSD
+rd <- rmsd(pdbs)
+
+# Structure-based clustering
+hc.rd <- hclust(dist(rd))
+grps.rd <- cutree(hc.rd, k=3)
+
+plot(pc.xray, 1:2, col="grey50", bg=grps.rd, pch=21, cex=1)
+pc1 <- mktrj(pc.xray, pc=1, file="pc_1.pdb")
+```
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+df <- data.frame(PC1=pc.xray$z[,1], 
+                 PC2=pc.xray$z[,2], 
+                 col=as.factor(grps.rd),
+                 ids=ids)
+
+p <- ggplot(df) + 
+  aes(PC1, PC2, col=col, label=ids) +
+  geom_point(size=2) +
+  geom_text_repel(max.overlaps = 20) +
+  theme(legend.position = "none")
+p
+```
+```{r}
+modes <- nma(pdbs)
+plot(modes, pdbs, col=grps.rd)
+```
+
+
+## Prediction of functional motions
+
+We can run an Normal Mode Analysis (NMA) to predict large scale motions/flexibility/dynamics of any biomolecule that we can read into R.
+
+Let's look at ADK
+```{r}
+adk <- read.pdb("1ake")
+adk_A <- trim.pdb(adk, chain = "A")
+adk_A
+```
+```{r}
+m <- nma(adk_A)
+plot(m)
+```
+
+Let's write a "trajectory" of predicted motion
+```{r}
+mktrj(m,file="adk_nma.pdb")
+```
+
+## Play with 3D viewing in R
+
+We can use the new **bio3dview** package, which is not yet on CRAN, to render interactive 3D views in R and HTML quarto output reports.
+
+To install from GitHub, we can use the **pak** package.
+```{r}
+library(pak)
+library(bio3d)
+```
+
+## Comparative analysis of protein structures
+
+Starting with a sequence or structure ID (accession number) let's run a complete analysis pipeline.
+
+```{r}
+library(bio3d)
+id <- "1ake_A"
+
+aa <- get.seq(id)
+aa
+```
+```{r, cache=TRUE}
+blast <- blast.pdb(aa)
+hits <- plot(blast)
+```
+```{r}
+hits$pdb.id
+```
+```{r}
+files <- get.pdb(hits$pdb.id, path="pdbs",split=T,gzip=T)
+```
+```{r}
+pdbs <- pdbaln(files, fit = TRUE, exefile="msa")
+```
+
+```{r}
+pc.xray <- pca(pdbs)
+plot(pc.xray)
+```
+
+```{r}
+plot(pc.xray,1:2)
+```
+```{r}
+mktrj(pc.xray, file="pca_results.pdb")
+```
+```{r}
+#library(bio3dview)
+view.pca(pc.xray)
+```
+
