@@ -2,7 +2,7 @@
 title: "Class 9"
 author: "Kavi (PID: A69046927)"
 toc: true
-format: pdf
+format: gfm
 ---
 
 ```{r}
