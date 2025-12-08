@@ -1,8 +1,0 @@
-\contentsline {subsection}{\nonumberline Background}{1}{subsection*.3}%
-\contentsline {subsection}{\nonumberline The CMI-PB Project}{4}{subsection*.5}%
-\contentsline {subsection}{\nonumberline Focus in IgG}{10}{subsection*.7}%
-\contentsline {subsubsection}{\nonumberline Differences between aP and wP?}{708}{subsubsection*.9}%
-\contentsline {subsubsection}{\nonumberline Time course analysis}{710}{subsubsection*.11}%
-\contentsline {subsection}{\nonumberline Time course of PT (Virulence Factor: Pertussis Toxin)}{711}{subsection*.13}%
-\contentsline {subsection}{\nonumberline System setup}{744}{subsection*.15}%
-\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
