@@ -210,7 +210,6 @@ IgG is crucial for long-term immunity and responding to bacterial and viral infe
 ```{r}
 ab_data |>
   filter(isotype == "IgG") -> igg_data
-igg_data
 ```
 Plot of antigen levels again but for IgG only
 ```{r}
