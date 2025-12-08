@@ -2,7 +2,7 @@
 title: "Class 19"
 author: "Kavi Gonur (PID: A69046927)"
 toc: true
-format: gfm
+format: pdf
 ---
 
 ## Background
@@ -286,6 +286,7 @@ PRN: Responses about the same
 FIM: For most part, aP > wP.
 
 ## Time course of PT (Virulence Factor: Pertussis Toxin)
+(removed dataset displays here, made rendering take WAYYYY too long)
 ```{r}
 pt_2020 <- igg_data |>
   filter(antigen == "PT") |>
@@ -293,9 +294,6 @@ pt_2020 <- igg_data |>
 pt_2021 <- igg_data |>
   filter(antigen == "PT") |>
   filter(dataset == "2021_dataset")
-
-pt_2020
-pt_2021
 ```
 
 ```{r}
