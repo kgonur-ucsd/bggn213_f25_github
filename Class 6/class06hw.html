@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -62,14 +62,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="class06hw_files/libs/clipboard/clipboard.min.js"></script>
 <script src="class06hw_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="class06hw_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="class06hw_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="class06hw_files/libs/quarto-html/popper.min.js"></script>
 <script src="class06hw_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="class06hw_files/libs/quarto-html/anchor.min.js"></script>
 <link href="class06hw_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="class06hw_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="class06hw_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="class06hw_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="class06hw_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="class06hw_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="class06hw_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -122,21 +123,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a.-improve-this-regular-r-code-by-abstracting-the-main-activities-in-your-own-new-function.-note-we-will-go-through-this-example-together-in-the-formal-lecture.-the-main-steps-should-entail-running-through-the-code-to-see-if-it-works-simplifying-to-a-core-working-code-snippet-reducing-any-calculation-duplication-and-finally-transferring-your-new-streamlined-code-into-a-more-useful-function-for-you." class="level3">
 <h3 class="anchored" data-anchor-id="a.-improve-this-regular-r-code-by-abstracting-the-main-activities-in-your-own-new-function.-note-we-will-go-through-this-example-together-in-the-formal-lecture.-the-main-steps-should-entail-running-through-the-code-to-see-if-it-works-simplifying-to-a-core-working-code-snippet-reducing-any-calculation-duplication-and-finally-transferring-your-new-streamlined-code-into-a-more-useful-function-for-you.">A. Improve this regular R code by abstracting the main activities in your own new function. Note, we will go through this example together in the formal lecture. The main steps should entail running through the code to see if it works, simplifying to a core working code snippet, reducing any calculation duplication, and finally transferring your new streamlined code into a more useful function for you.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Can you improve this analysis code?</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Can you improve this analysis code?</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">b=</span><span class="fu">seq</span>(<span class="dv">200</span>,<span class="dv">400</span>,<span class="at">length=</span><span class="dv">10</span>),<span class="at">c=</span><span class="dv">11</span><span class="sc">:</span><span class="dv">20</span>,<span class="at">d=</span><span class="cn">NA</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>a <span class="ot">&lt;-</span> (df<span class="sc">$</span>a <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a))</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>b <span class="ot">&lt;-</span> (df<span class="sc">$</span>b <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>b) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>b))</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>c <span class="ot">&lt;-</span> (df<span class="sc">$</span>c <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>c)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>c) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>c))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>d <span class="ot">&lt;-</span> (df<span class="sc">$</span>d <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>d <span class="ot">&lt;-</span> (df<span class="sc">$</span>d <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Improved analysis code:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A. Improved analysis code:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">b=</span><span class="fu">seq</span>(<span class="dv">200</span>,<span class="dv">400</span>,<span class="at">length=</span><span class="dv">10</span>),<span class="at">c=</span><span class="dv">11</span><span class="sc">:</span><span class="dv">20</span>,<span class="at">d=</span><span class="cn">NA</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>a <span class="ot">&lt;-</span> (df<span class="sc">$</span>a <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a))</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>b <span class="ot">&lt;-</span> (df<span class="sc">$</span>b <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>a)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>b) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>b))</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>c <span class="ot">&lt;-</span> (df<span class="sc">$</span>c <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>c)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>c) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>c))</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>d <span class="ot">&lt;-</span> (df<span class="sc">$</span>d <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>d <span class="ot">&lt;-</span> (df<span class="sc">$</span>d <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d)) <span class="sc">/</span> (<span class="fu">max</span>(df<span class="sc">$</span>a) <span class="sc">-</span> <span class="fu">min</span>(df<span class="sc">$</span>d))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="b.-next-improve-the-below-example-code-for-the-analysis-of-protein-drug-interactions-by-abstracting-the-main-activities-in-your-own-new-function.-then-answer-questions-1-to-6-below.-it-is-recommended-that-you-start-a-new-project-in-rstudio-in-a-new-directory-and-then-install-the-bio3d-package-noted-in-the-r-code-below-n.b.-you-can-use-the-command-install.packagesbio3d-or-the-rstudio-interface-to-do-this.-then-run-through-the-code-to-see-if-it-works-fix-any-copypaste-errors-before-simplifying-to-a-core-working-code-snippet-reducing-any-calculation-duplication-and-finally-transferring-it-into-a-more-useful-function-for-you." class="level3">
@@ -144,22 +145,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="original" class="level4">
 <h4 class="anchored" data-anchor-id="original">Original</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Can you improve this analysis code?</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Can you improve this analysis code?</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bio3d)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"4AKE"</span>) <span class="co"># kinase with drug</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"4AKE"</span>) <span class="co"># kinase with drug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Note: Accessing on-line PDB file</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"1AKE"</span>) <span class="co"># kinase no drug</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"1AKE"</span>) <span class="co"># kinase no drug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Note: Accessing on-line PDB file
    PDB has ALT records, taking A only, rm.alt=TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"1E4Y"</span>) <span class="co"># kinase with drug</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s3 <span class="ot">&lt;-</span> <span class="fu">read.pdb</span>(<span class="st">"1E4Y"</span>) <span class="co"># kinase with drug</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Note: Accessing on-line PDB file</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s1.chainA <span class="ot">&lt;-</span> <span class="fu">trim.pdb</span>(s1, <span class="at">chain=</span><span class="st">"A"</span>, <span class="at">elety=</span><span class="st">"CA"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s1.chainA <span class="ot">&lt;-</span> <span class="fu">trim.pdb</span>(s1, <span class="at">chain=</span><span class="st">"A"</span>, <span class="at">elety=</span><span class="st">"CA"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s2.chainA <span class="ot">&lt;-</span> <span class="fu">trim.pdb</span>(s2, <span class="at">chain=</span><span class="st">"A"</span>, <span class="at">elety=</span><span class="st">"CA"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>s3.chainA <span class="ot">&lt;-</span> <span class="fu">trim.pdb</span>(s3, <span class="at">chain=</span><span class="st">"A"</span>, <span class="at">elety=</span><span class="st">"CA"</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -167,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>s2.b <span class="ot">&lt;-</span> s2.chainA<span class="sc">$</span>atom<span class="sc">$</span>b</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>s3.b <span class="ot">&lt;-</span> s3.chainA<span class="sc">$</span>atom<span class="sc">$</span>b</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s1.b, <span class="at">sse=</span>s1.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s1.b, <span class="at">sse=</span>s1.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -175,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s2.b, <span class="at">sse=</span>s2.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s2.b, <span class="at">sse=</span>s2.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -183,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s3.b, <span class="at">sse=</span>s3.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plotb3</span>(s3.b, <span class="at">sse=</span>s3.chainA, <span class="at">typ=</span><span class="st">"l"</span>, <span class="at">ylab=</span><span class="st">"Bfactor"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -196,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="my-version" class="level4">
 <h4 class="anchored" data-anchor-id="my-version">My Version</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>generate.plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>generate.plot <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Applies the function to each PDB code provided in vector 'x'</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(x, <span class="cf">function</span>(pdb_code) {</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -218,17 +219,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Returns the plot for individual PDB entries</span></span>
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(finalplot)</span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs the function for three PDB entries: 4AKE, 1AKE, and 1E4Y</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">generate.plot</span>(<span class="fu">c</span>(<span class="st">"4AKE"</span>, <span class="st">"1AKE"</span>, <span class="st">"1E4Y"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs the function for three PDB entries: 4AKE, 1AKE, and 1E4Y</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">generate.plot</span>(<span class="fu">c</span>(<span class="st">"4AKE"</span>, <span class="st">"1AKE"</span>, <span class="st">"1E4Y"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Note: Accessing on-line PDB file</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-C:\Users\kavan\AppData\Local\Temp\RtmpIpkVPc/4AKE.pdb exists. Skipping download</code></pre>
+C:\Users\kavan\AppData\Local\Temp\RtmpSGSvsE/4AKE.pdb exists. Skipping download</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -242,7 +243,7 @@ C:\Users\kavan\AppData\Local\Temp\RtmpIpkVPc/4AKE.pdb exists. Skipping download<
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-C:\Users\kavan\AppData\Local\Temp\RtmpIpkVPc/1AKE.pdb exists. Skipping download</code></pre>
+C:\Users\kavan\AppData\Local\Temp\RtmpSGSvsE/1AKE.pdb exists. Skipping download</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   PDB has ALT records, taking A only, rm.alt=TRUE</code></pre>
@@ -259,12 +260,56 @@ C:\Users\kavan\AppData\Local\Temp\RtmpIpkVPc/1AKE.pdb exists. Skipping download<
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-C:\Users\kavan\AppData\Local\Temp\RtmpIpkVPc/1E4Y.pdb exists. Skipping download</code></pre>
+C:\Users\kavan\AppData\Local\Temp\RtmpSGSvsE/1E4Y.pdb exists. Skipping download</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="class06hw_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Picked 3 random sequences, generated for those too</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">generate.plot</span>(<span class="fu">c</span>(<span class="st">"2HHB"</span>, <span class="st">"1UBQ"</span>, <span class="st">"4HHB"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Note: Accessing on-line PDB file</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="class06hw_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Note: Accessing on-line PDB file</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="class06hw_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Note: Accessing on-line PDB file</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="class06hw_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -336,13 +381,14 @@ NULL</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

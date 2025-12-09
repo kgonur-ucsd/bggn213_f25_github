@@ -181,7 +181,7 @@ pg<-ggplot(genes) +
 pg
 ```
 
-    Warning: ggrepel: 5140 unlabeled data points (too many overlaps). Consider
+    Warning: ggrepel: 5141 unlabeled data points (too many overlaps). Consider
     increasing max.overlaps
 
 ![](class05_files/figure-commonmark/unnamed-chunk-14-1.png)

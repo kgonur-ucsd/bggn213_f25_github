@@ -1,7 +1,7 @@
 ---
 title: "Class 10"
 author: "Kavi Gonur (PID: A69046927)"
-format: gfm
+format: html
 ---
 
 ## Importing candy data

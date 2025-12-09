@@ -133,14 +133,14 @@ generate.plot(c("4AKE", "1AKE", "1E4Y"))
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    C:\Users\kavan\AppData\Local\Temp\RtmpqkMQHp/4AKE.pdb exists. Skipping download
+    C:\Users\kavan\AppData\Local\Temp\RtmpUvLw0c/4AKE.pdb exists. Skipping download
 
 ![](class06hw_files/figure-commonmark/unnamed-chunk-5-1.png)
 
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    C:\Users\kavan\AppData\Local\Temp\RtmpqkMQHp/1AKE.pdb exists. Skipping download
+    C:\Users\kavan\AppData\Local\Temp\RtmpUvLw0c/1AKE.pdb exists. Skipping download
 
        PDB has ALT records, taking A only, rm.alt=TRUE
 
@@ -149,7 +149,7 @@ generate.plot(c("4AKE", "1AKE", "1E4Y"))
       Note: Accessing on-line PDB file
 
     Warning in get.pdb(file, path = tempdir(), verbose = FALSE):
-    C:\Users\kavan\AppData\Local\Temp\RtmpqkMQHp/1E4Y.pdb exists. Skipping download
+    C:\Users\kavan\AppData\Local\Temp\RtmpUvLw0c/1E4Y.pdb exists. Skipping download
 
 ![](class06hw_files/figure-commonmark/unnamed-chunk-5-3.png)
 

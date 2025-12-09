@@ -1,7 +1,7 @@
 ---
 title: "Class 6: R Functions"
 author: "Kavi (PID: A69046927)"
-format: gfm
+format: html
 toc: true
 ---
 

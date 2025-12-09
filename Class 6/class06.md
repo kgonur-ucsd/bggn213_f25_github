@@ -46,7 +46,7 @@ not “C”,“A”,“C”,“A”,“G”,“C”.
 paste(v,collapse="")
 ```
 
-    [1] "ACCTTAACCGACTAACCTAATGTTGCAGGGACAGTAGCGAGCATCAAAAC"
+    [1] "ACTGTGGGCCTGCTGCTAAGGATCTCCACCTCCGCTCCCTCGTGGAAATT"
 
 Combined, the code is:
 
@@ -63,7 +63,7 @@ Test it:
 generate_dna(60)
 ```
 
-    [1] "TCAATTCCTAGGCTTTTGTACTCCCCTACACTGCGACTTGCGCATAACCGGGACACCTCT"
+    [1] "CTAGGTCACCGTTTATAGCCCCGAAGGGAAACATCACCAGTCTTCCCTTTGGGACAGCCG"
 
 ``` r
 fasta <- FALSE
@@ -92,9 +92,9 @@ if(fasta == TRUE) {
 }
 ```
 
-     [1] "C" "C" "C" "A" "A" "C" "A" "G" "T" "C" "A" "T" "C" "C" "A" "T" "T" "A" "G"
-    [20] "C" "T" "A" "G" "G" "A" "T" "G" "A" "G" "G" "C" "A" "C" "G" "C" "A" "T" "T"
-    [39] "T" "T" "T" "T" "G" "G" "C" "T" "G" "G" "A" "T"
+     [1] "T" "C" "G" "T" "A" "C" "C" "G" "G" "C" "G" "T" "T" "T" "C" "G" "T" "T" "T"
+    [20] "G" "T" "T" "A" "T" "C" "A" "T" "T" "T" "A" "T" "C" "G" "C" "G" "A" "C" "T"
+    [39] "A" "T" "A" "G" "G" "A" "T" "A" "T" "T" "G" "G"
 
 Now to generate a protein sequence…
 
@@ -113,9 +113,9 @@ if(fasta == TRUE) {
 }
 ```
 
-     [1] "W" "G" "D" "D" "L" "E" "Y" "S" "R" "V" "A" "L" "D" "Q" "P" "A" "M" "K" "E"
-    [20] "H" "C" "M" "A" "F" "W" "D" "W" "Q" "T" "F" "H" "R" "A" "Y" "D" "H" "G" "D"
-    [39] "G" "L" "W" "K" "H" "G" "Q" "F" "K" "I" "A" "N"
+     [1] "Y" "F" "T" "C" "Y" "N" "S" "N" "S" "C" "T" "C" "V" "E" "S" "V" "K" "G" "K"
+    [20] "L" "S" "M" "C" "R" "R" "M" "V" "M" "C" "N" "N" "V" "N" "P" "M" "V" "Q" "F"
+    [39] "V" "D" "F" "M" "V" "I" "P" "N" "C" "A" "M" "I"
 
 Better way:
 
@@ -135,10 +135,10 @@ generate_protein <- function(size = 50, fasta = FALSE) {
 generate_protein(60, fasta = FALSE)
 ```
 
-     [1] "P" "F" "N" "T" "Q" "T" "G" "N" "Q" "S" "L" "K" "Q" "A" "T" "A" "W" "P" "N"
-    [20] "T" "H" "F" "K" "T" "F" "P" "V" "P" "W" "H" "C" "T" "P" "I" "W" "P" "P" "G"
-    [39] "T" "P" "I" "F" "P" "F" "P" "I" "K" "Q" "F" "A" "T" "D" "Q" "H" "L" "A" "K"
-    [58] "R" "A" "P"
+     [1] "Y" "Y" "K" "P" "H" "D" "A" "C" "R" "S" "I" "H" "S" "F" "W" "S" "Q" "F" "V"
+    [20] "S" "Q" "H" "P" "H" "G" "K" "I" "E" "I" "V" "I" "C" "K" "Q" "K" "H" "A" "E"
+    [39] "D" "G" "Q" "M" "P" "Q" "P" "I" "K" "M" "W" "A" "C" "T" "T" "T" "W" "K" "F"
+    [58] "V" "P" "S"
 
 Use our new `generate_protein()` function to make random protein
 sequences of length 6 to 12 (i.e. one length 6, one length 7, etc. up to
@@ -150,25 +150,25 @@ One way to do this is “brute force”.
 generate_protein(6)
 ```
 
-    [1] "N" "W" "K" "C" "R" "D"
+    [1] "L" "P" "L" "W" "V" "K"
 
 ``` r
 generate_protein(7)
 ```
 
-    [1] "D" "P" "Q" "Y" "K" "P" "G"
+    [1] "I" "M" "G" "L" "V" "V" "V"
 
 ``` r
 generate_protein(8)
 ```
 
-    [1] "E" "W" "E" "W" "G" "Y" "F" "K"
+    [1] "M" "P" "F" "Q" "L" "Y" "M" "G"
 
 ``` r
 generate_protein(9)
 ```
 
-    [1] "M" "Q" "Q" "L" "H" "V" "P" "M" "C"
+    [1] "H" "H" "T" "Y" "H" "Q" "K" "F" "D"
 
 Work smarter, not harder:
 
@@ -186,19 +186,19 @@ for(i in lengths) {
 ```
 
     >6
-    FSEIYQ
+    GSHGMG
     >7
-    WCLRMDK
+    HLDGWYY
     >8
-    FWGAGGDA
+    AVYGSFVC
     >9
-    HYTRPCHRK
+    IQETWKGLS
     >10
-    LFHWTHEWTR
+    PFHFGGWHQI
     >11
-    PCMHSKEENLL
+    CTLFQCCNGQW
     >12
-    WIECKDVQNWKS
+    DFGCRQIMHEAV
 
 A third, and better, way to solve this is to use the `apply()` family of
 functions, specifically the `sapply()` function in this case.
@@ -213,16 +213,16 @@ cat(paste(fasta_seqs, collapse = "\n"))
 ```
 
     >6
-    VVIAQH
+    GVWLKL
     >7
-    TKYRGYM
+    TWIGLRH
     >8
-    TMGSARGK
+    RWSIAEPQ
     >9
-    FHYRGDTEP
+    CPQWVPPGW
     >10
-    SDNHQWEVRN
+    QWCYHKPMII
     >11
-    MSWGMCFCLWL
+    YRAYNDECYCP
     >12
-    TYEAGECKKWKY
+    WLHTGCSGKRYT

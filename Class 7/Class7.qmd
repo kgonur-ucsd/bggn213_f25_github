@@ -2,7 +2,7 @@
 title: "Class 7"
 author: "Kavi (PID: A69046927)"
 toc: true
-format: gfm
+format: html
 ---
 
 Today, we will begin our exploration of some "classical" machine learning approaches. We will start with clustering:

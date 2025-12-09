@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(v,<span class="at">collapse=</span><span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "GCCGGAGCACATTCCTTGGGTTGCCCGCAGTTCTCGCCTCCCCGGTGCAA"</code></pre>
+<pre><code>[1] "ACATCAACCTCTGGCACAGATTAAAAGGCTTAAGGGACCAGACGGAGACA"</code></pre>
 </div>
 </div>
 <p>Combined, the code is:</p>
@@ -162,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_dna</span>(<span class="dv">60</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "CCCCGCCTGTGTGGCACATCACACTACGCCCGTTTGTTGATCAGAACAGCTACTTAAAGC"</code></pre>
+<pre><code>[1] "GCATGGCTGCAACAACTCGCAGCTGAACCGAGTCTAACCTAGTAACTAGCTTGAGAGGCG"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -189,9 +189,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate_me</span>()</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "C" "G" "A" "C" "T" "A" "T" "A" "C" "G" "T" "T" "G" "C" "T" "A" "G" "G" "C"
-[20] "G" "G" "C" "G" "C" "G" "G" "C" "G" "G" "C" "C" "T" "C" "G" "G" "C" "C" "G"
-[39] "A" "T" "C" "C" "G" "C" "C" "C" "T" "G" "T" "C"</code></pre>
+<pre><code> [1] "G" "A" "G" "C" "A" "G" "C" "G" "A" "A" "A" "G" "T" "G" "C" "T" "G" "C" "G"
+[20] "A" "G" "C" "T" "A" "G" "A" "A" "C" "C" "G" "G" "T" "C" "C" "G" "A" "A" "G"
+[39] "C" "A" "G" "C" "G" "A" "T" "A" "G" "C" "A" "G"</code></pre>
 </div>
 </div>
 <p>Now to generate a protein sequence…</p>
@@ -209,9 +209,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate_me</span>()</span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Q" "C" "C" "A" "Y" "I" "A" "E" "P" "S" "N" "F" "C" "V" "P" "E" "V" "V" "A"
-[20] "Y" "D" "G" "C" "H" "H" "N" "R" "N" "W" "F" "N" "D" "C" "I" "F" "A" "Y" "D"
-[39] "W" "S" "G" "M" "G" "R" "A" "G" "G" "T" "F" "N"</code></pre>
+<pre><code> [1] "D" "E" "V" "I" "G" "T" "G" "N" "K" "I" "R" "T" "E" "R" "Q" "A" "P" "D" "L"
+[20] "Q" "D" "I" "L" "K" "Q" "I" "L" "Y" "S" "E" "S" "R" "T" "G" "V" "Y" "R" "C"
+[39] "N" "H" "H" "F" "F" "F" "Y" "G" "P" "A" "L" "E"</code></pre>
 </div>
 </div>
 <p>Better way:</p>
@@ -229,10 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_protein</span>(<span class="dv">60</span>, <span class="at">fasta =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "C" "Q" "T" "L" "C" "F" "T" "P" "H" "M" "F" "I" "P" "E" "D" "N" "I" "E" "Q"
-[20] "N" "Y" "I" "P" "H" "S" "T" "S" "P" "T" "G" "K" "N" "I" "F" "S" "L" "I" "I"
-[39] "P" "W" "E" "G" "G" "S" "N" "M" "T" "D" "G" "E" "Y" "L" "I" "K" "G" "C" "I"
-[58] "H" "K" "P"</code></pre>
+<pre><code> [1] "I" "L" "L" "G" "L" "M" "P" "S" "F" "W" "I" "G" "Q" "R" "M" "V" "K" "E" "V"
+[20] "T" "V" "F" "A" "R" "A" "Y" "A" "N" "D" "L" "A" "Q" "E" "M" "P" "K" "V" "F"
+[39] "K" "V" "W" "L" "D" "N" "E" "P" "M" "S" "V" "H" "E" "C" "S" "G" "A" "F" "Y"
+[58] "Q" "I" "H"</code></pre>
 </div>
 </div>
 <p>Use our new <code>generate_protein()</code> function to make random protein sequences of length 6 to 12 (i.e.&nbsp;one length 6, one length 7, etc. up to a length of 12.)</p>
@@ -240,19 +240,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_protein</span>(<span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "M" "I" "E" "D" "Q" "I"</code></pre>
+<pre><code>[1] "N" "K" "L" "A" "R" "Q"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_protein</span>(<span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "I" "A" "L" "G" "W" "D" "F"</code></pre>
+<pre><code>[1] "I" "W" "I" "K" "V" "M" "C"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_protein</span>(<span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "S" "Q" "S" "D" "A" "K" "S" "H"</code></pre>
+<pre><code>[1] "N" "D" "D" "R" "K" "G" "L" "S"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_protein</span>(<span class="dv">9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "E" "G" "D" "W" "N" "T" "A" "W" "A"</code></pre>
+<pre><code>[1] "Q" "P" "H" "V" "D" "R" "Y" "L" "W"</code></pre>
 </div>
 </div>
 <p>Work smarter, not harder:</p>
@@ -268,19 +268,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&gt;6
-KWIQPA
+GVSQKN
 &gt;7
-SCGNAGN
+YRHTYLD
 &gt;8
-PIPWMCAI
+KEMETKQM
 &gt;9
-GGRPDLQQS
+VQFFDLRKM
 &gt;10
-PPASTPRTQC
+TTTVGKNEWN
 &gt;11
-TNPYTNWPNTV
+YQPQAYHETCR
 &gt;12
-DFCDGCARTDGV</code></pre>
+RTISQHTVYIME</code></pre>
 </div>
 </div>
 <p>A third, and better, way to solve this is to use the <code>apply()</code> family of functions, specifically the <code>sapply()</code> function in this case.</p>
@@ -293,19 +293,19 @@ DFCDGCARTDGV</code></pre>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(fasta_seqs, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&gt;6
-TRRFCP
+ISEQKT
 &gt;7
-SPRFIDK
+TQCCIRE
 &gt;8
-HFKISDNK
+HCLPWKCF
 &gt;9
-GLEITDCDY
+SHSFADNVH
 &gt;10
-VKLLPFHPWW
+NCEQDQIALD
 &gt;11
-RRQLAIFTVAN
+YDYTESSHSGD
 &gt;12
-HVPLWWKENDEQ</code></pre>
+FPPGELAGSKMY</code></pre>
 </div>
 </div>
 </section>

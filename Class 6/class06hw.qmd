@@ -1,7 +1,7 @@
 ---
 title: "Week 5 Homework"
 author: "Kavi (PID: A69046927)"
-format: gfm
+format: html
 toc: true
 ---
 

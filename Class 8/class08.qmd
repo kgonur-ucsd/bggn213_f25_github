@@ -1,7 +1,7 @@
 ---
 title: "Class 8: Breast Cancer Analysis Project"
 author: "Kavi Gonur (PID: A69046927)"
-format: gfm
+format: html
 toc: true
 ---
 

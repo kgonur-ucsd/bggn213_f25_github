@@ -1,7 +1,7 @@
 ---
 title: "Class 16 HW"
 author: "Kavi (PID: A69046927)"
-format: gfm
+format: html
 toc: true
 ---
 Back on our laptop we can now use R and Bioconductor tools to further explore this large scale dataset.
