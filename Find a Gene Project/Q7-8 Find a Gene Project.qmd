@@ -2,7 +2,7 @@
 title: "Find a Gene Project"
 author: "Kavi (PID: )"
 toc: true
-format: html
+format: gfm
 ---
 
 > 7. Convert the alignment to FASTA if needed and use R/Bio3D to calculate a sequence identity matrix.Generate a sequence identity heatmap in R and include it in the report.

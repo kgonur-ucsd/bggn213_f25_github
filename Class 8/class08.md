@@ -272,7 +272,7 @@ install.packages("factoextra")
     package 'factoextra' successfully unpacked and MD5 sums checked
 
     The downloaded binary packages are in
-        C:\Users\kavan\AppData\Local\Temp\RtmpeEqBkM\downloaded_packages
+        C:\Users\kavan\AppData\Local\Temp\Rtmpkf4G6z\downloaded_packages
 
 ``` r
 ## ggplot based graph
@@ -285,7 +285,7 @@ install.packages("factoextra")
     package 'factoextra' successfully unpacked and MD5 sums checked
 
     The downloaded binary packages are in
-        C:\Users\kavan\AppData\Local\Temp\RtmpeEqBkM\downloaded_packages
+        C:\Users\kavan\AppData\Local\Temp\Rtmpkf4G6z\downloaded_packages
 
 ``` r
 library(factoextra)

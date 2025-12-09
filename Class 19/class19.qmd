@@ -2,7 +2,7 @@
 title: "Class 19"
 author: "Kavi Gonur (PID: A69046927)"
 toc: true
-format: html
+format: gfm
 ---
 
 ## Background
