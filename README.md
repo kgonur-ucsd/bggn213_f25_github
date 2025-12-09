@@ -13,7 +13,7 @@ Class work for bioinformatics class [BGGN 213 at UC San Diego](https://bioboot.g
 - Class 10: [Halloween Candy Mini-Project](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2010/class10.md)
 - Class 11: [Structure prediction with AlphaFold2 (Structural Bioinformatics pt2.)](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2011/class11.md)
 - Class 12: [Transcriptomics and the analysis of RNA-Seq data](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2012/class12.md)
-- Class 13: [RNA-Seq analysis mini-project](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2013/class13.md)
+- Class 13: [RNA-Seq analysis mini-project](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2013/class13.html)
 - Class 15: [Essential UNIX for bioinformatics](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class_15/class15)
 - Class 16: [Analyzing sequencing data in the cloud](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class_16/class16.qmd)
 - Class 17: [Genome informatics](https://github.com/kgonur-ucsd/bggn213_f25_github/blob/main/Class%2017/class17.md)
