@@ -10,7 +10,7 @@ Class work for bioinformatics class [BGGN 213 at UC San Diego](https://bioboot.g
 - Class 07: [Introduction to machine learning for Bioinformatics 1](Class%207/Class7.html)
 - Class 08: [Unsupervised learning mini-project](Class%208/class08.html)
 - Class 09: [Structural Bioinformatics (Focus on new AlphaFold2)](Class%209/class09.html)
-- Class 10: [Halloween Candy Mini-Project](class10.html)
+- Class 10: [Halloween Candy Mini-Project](Class%2010/class10.html)
 - Class 11: [Structure prediction with AlphaFold2 (Structural Bioinformatics pt2.)](Class%2011/class11.html)
 - Class 12: [Transcriptomics and the analysis of RNA-Seq data](Class%2012/class12.html)
 - Class 13: [RNA-Seq analysis mini-project](Class%2013/class13.html)
